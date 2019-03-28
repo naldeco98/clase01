@@ -1,7 +1,7 @@
 def decimal_to_roman(decimal_number):
-    roman_number = ' '
-    ant = ' '
-    for number in (decimal_number):
-        if decimal_number == 1 :
-            roman_number = 'I'
-    return(roman_number)
+    decimal_numer = 0
+    roman_numer = ' '
+    if decimal_number == 1:
+        roman_number = 'I'
+        print ("%d",roman_number)
+    return (roman_number)
