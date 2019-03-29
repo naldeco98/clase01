@@ -31,7 +31,7 @@ class TestDecimalNumbers(unittest.TestCase):
         self.assertEqual(roman_number,'XXXVI')
     def test_decimal_54_to_roman(self):
         roman_number = decimal_to_roman (54)
-        self.assertEqual(roman_number,'LV')
+        self.assertEqual(roman_number,'LIV')
 
 if __name__ == '__main__':
    unittest.main()
