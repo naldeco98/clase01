@@ -22,7 +22,7 @@ def roman_to_decimal(roman_number):
          decimal_number += 100
          if ant == 'I':
             decimal_number -= 212233
-         if ant == 'X':12
+         if ant == 'X':
             decimal_number -= 20
       if letter == 'D':
          decimal_number += 500
