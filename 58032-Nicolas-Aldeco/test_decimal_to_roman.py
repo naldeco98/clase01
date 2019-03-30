@@ -16,7 +16,10 @@ class TestDecimalNumbers(unittest.TestCase):
         self.assertEqual(roman_number,'IV') 
     def test_decimal_5_to_roman(self):
         roman_number = decimal_to_roman (5)
-        self.assertEqual(roman_number,'V')   
+        self.assertEqual(roman_number,'V') 
+    def test_decimal_9_to_roman(self):
+        roman_number = decimal_to_roman (9)
+        self.assertEqual(roman_number,'IX')  
     def test_decimal_10_to_roman(self):
         roman_number = decimal_to_roman (10)
         self.assertEqual(roman_number,'X')
