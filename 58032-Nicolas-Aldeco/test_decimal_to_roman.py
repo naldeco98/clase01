@@ -62,6 +62,22 @@ class TestDecimalNumbers(unittest.TestCase):
     def test_decimal_3999_to_roman(self):
         roman_number = decimal_to_roman (3999)
         self.assertEqual(roman_number,'MMMCMXCIX')
+ #En caso de ingresar un numero fuera del rango de numeros romanos
+    def test_decimal_5000_to_roman(self):             
+        roman_number = decimal_to_roman (5000)
+        self.assertEqual(roman_number,'NumberOutOfLimit')
+    def test_decimal_6734_to_roman(self):             
+        roman_number = decimal_to_roman (6734)
+        self.assertEqual(roman_number,'NumberOutOfLimit')
+    def test_decimal_8064_to_roman(self):             
+        roman_number = decimal_to_roman (8064)
+        self.assertEqual(roman_number,'NumberOutOfLimit')
+    def test_decimal_10000_to_roman(self):             
+        roman_number = decimal_to_roman (10000)
+        self.assertEqual(roman_number,'NumberOutOfLimit')
+    def test_decimal_235150_to_roman(self):             
+        roman_number = decimal_to_roman (235150)
+        self.assertEqual(roman_number,'NumberOutOfLimit')
 
 if __name__ == '__main__':
    unittest.main()

@@ -81,7 +81,27 @@ def decimal_to_roman(decimal_number):
             r_udm = 'MM'
         if decimal_string[3] == '3':
             r_udm = 'MMM'
-     
-    roman_number = r_udm + r_cent + r_dec + r_uni
+        if decimal_string[3] == '4':    #Numeros mayores 3999, no estan contemplados en los numeros romanos
+            roman_number = ''
+            nd = 5
+        if decimal_string[3] == '5':
+            roman_number = ''
+            nd = 5
+        if decimal_string[3] == '6':
+            roman_number = ''
+            nd = 5
+        if decimal_string[3] == '7':
+            roman_number = ''
+            nd = 5
+        if decimal_string[3] == '8':
+            roman_number = ''
+            nd = 5
+        if decimal_string[3] == '9':
+            roman_number = ''
+            nd = 5
+    if nd >= 5:
+        roman_number = 'NumberOutOfLimit'
+    else:
+        roman_number = r_udm + r_cent + r_dec + r_uni
       
     return (roman_number)
