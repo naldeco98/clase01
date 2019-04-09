@@ -37,7 +37,7 @@ while True:
 
         os.system('clear')
         print('Ingrese un numero entre I y MMMCMXCIX')
-        roman_number = input('\n\n>> ').upper()
+        roman_number = input('\n\n>> ').upper() 
 
         result = roman_to_decimal(roman_number)
 
