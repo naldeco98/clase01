@@ -33,7 +33,8 @@ class ComputerAgainstHumanGame(Game):
 
     def input_text(self):
         n = str(self.guest)
-        return 'Is it your number ',n,'?'
+        ans = ('Is it your number '+n+'?')
+        return ans
 
     def play(self,inputx):
         try:
@@ -41,11 +42,11 @@ class ComputerAgainstHumanGame(Game):
         except:
             if inputx == '+':
                 self.bottom = self.guest
-                self.guest = self.bottom + int(self.guest/2)
+                self.guest += int(self.guest/2)
                 return
             if inputx == '-':
                 self.top = self.guest
-                self.guest = self.top + int(self.guest/2)
+                self.guest += int(self.guest/2)
                 return
             if inputx == '=':
                 self.is_playing = False
