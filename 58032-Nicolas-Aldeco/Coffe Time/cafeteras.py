@@ -25,14 +25,18 @@ class BasicCoffeMaker(Machine):
             self.coffe_level -= coffe
             return 'Cafe con '+str(coffe)+' gramos.'
         else:
-            return 'No tengo mas cafe'
+            self.coins -= 1
+            self.makingCoffe = False
+            return 'No tengo mas cafe,tome su moneda'
 
     def waterquantity(self,water):
         if self.water_level > 0:
             self.water_level -= water
             return 'Cafe con '+str(water)+' ml de agua'
         else:
-            return 'No tengo mas agua'
+            self.coins -= 1
+            self.makingCoffe = False
+            return 'No tengo mas agua,tome su moneda'
 
     def sugarquantity(self,sugar):
         if self.sugar_level > 0 and sugar == True:
@@ -41,4 +45,6 @@ class BasicCoffeMaker(Machine):
         elif sugar == False:
             return 'Sin azucar'
         else:
-            return 'No tengo mas azucar'
+            self.coins -= 1
+            self.makingCoffe = False         
+            return 'No tengo mas azucar,tome su moneda'
