@@ -1,5 +1,5 @@
 import unittest
-from cafeteras import Machine,BasicCoffeMaker;
+from cafeteras import MachineForCoffe,BasicCoffeMaker;
 
 class TestBasicCoffeMakerFULL(unittest.TestCase):
 
@@ -55,16 +55,37 @@ class TestBasicCoffeMakerEMPTY(unittest.TestCase):
         self.client.water_level = 0
         self.client.sugar_level = 0
     
-    def test_caffe_simple_EMPTY(self):
+    def test_caffe_simple_EMPTY_NoCoffe(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
         self.assertEqual(self.client.coffequantity(10),'No tengo mas cafe,tome su moneda')
-        self.assertEqual(self.client.waterquantity(100),'No tengo mas agua,tome su moneda')
-        self.assertEqual(self.client.sugarquantity(False),'Sin azucar')
         #Estado de la maquina
         self.assertEqual(self.client.coffe_level,0)
         self.assertEqual(self.client.water_level,0)
         self.assertEqual(self.client.sugar_level,0)
         self.assertEqual(self.client.coins,0)
+
+    def test_caffe_simple_EMPTY_NoWater(self):
+        self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
+        self.assertEqual(self.client.waterquantity(100),'No tengo mas agua,tome su moneda')
+        #Estado de la maquina
+        self.assertEqual(self.client.coffe_level,0)
+        self.assertEqual(self.client.water_level,0)
+        self.assertEqual(self.client.sugar_level,0)
+        self.assertEqual(self.client.coins,0)
+
+    def test_caffe_simple_EMPTY_NoSugar(self):
+        self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
+        self.assertEqual(self.client.sugarquantity(True),'No tengo mas azucar,tome su moneda')
+        #Estado de la maquina
+        self.assertEqual(self.client.coffe_level,0)
+        self.assertEqual(self.client.water_level,0)
+        self.assertEqual(self.client.sugar_level,0)
+        self.assertEqual(self.client.coins,0)
+
+class TestPremiumCoffeMakerFULL(unittest.TestCase):
+
+    def setUp(self):
+        self.client = PremiumCoffeMaker()
 
 if __name__ == "__main__":
     unittest.main()
