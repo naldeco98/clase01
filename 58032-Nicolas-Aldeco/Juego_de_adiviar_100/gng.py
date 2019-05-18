@@ -29,7 +29,7 @@ class ComputerAgainstHumanGame(Game):
         self.is_playing = True
         self.guest = 50
         self.top = 100
-        self.bottom = 1
+        self.bottom = 0
 
     def input_text(self):
         n = str(self.guest)
@@ -42,11 +42,11 @@ class ComputerAgainstHumanGame(Game):
         except:
             if inputx == '+':
                 self.bottom = self.guest
-                self.guest += int(self.guest/2)
+                self.guest += int((self.top - self.bottom)/2)
                 return
             if inputx == '-':
                 self.top = self.guest
-                self.guest += int(self.guest/2)
+                self.guest -= int((self.top - self.bottom)/2)
                 return
             if inputx == '=':
                 self.is_playing = False

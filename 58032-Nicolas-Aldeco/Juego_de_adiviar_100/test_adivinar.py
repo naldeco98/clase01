@@ -27,7 +27,7 @@ class TestComputerAgainstHuman(unittest.TestCase):
     def setUp(self):
         self.game = ComputerAgainstHumanGame()
 
-    def test_guess_number(self):
+    def test_guess_number(self):    #77
         self.assertEquals(self.game.input_text(), 'Is it your number 50?')
         self.game.play('+')
         self.assertTrue(self.game.is_playing)
@@ -43,10 +43,24 @@ class TestComputerAgainstHuman(unittest.TestCase):
         self.assertEquals(self.game.input_text(), 'Is it your number 78?')
         self.game.play('-')
         self.assertTrue(self.game.is_playing)
-        self.assertEquals(self.game.input_text(), 'Is it your number 76?')
+        self.assertEquals(self.game.input_text(), 'Is it your number 77?')
+        self.game.play('=')
+        self.assertFalse(self.game.is_playing)
+
+    def test_guess_number2(self):   #34
+        self.assertEquals(self.game.input_text(), 'Is it your number 50?')
+        self.game.play('-')
+        self.assertTrue(self.game.is_playing)
+        self.assertEquals(self.game.input_text(), 'Is it your number 25?')
         self.game.play('+')
         self.assertTrue(self.game.is_playing)
-        self.assertEquals(self.game.input_text(), 'Is it your number 77?')
+        self.assertEquals(self.game.input_text(), 'Is it your number 37?')
+        self.game.play('-')
+        self.assertTrue(self.game.is_playing)
+        self.assertEquals(self.game.input_text(), 'Is it your number 31?')
+        self.game.play('+')
+        self.assertTrue(self.game.is_playing)
+        self.assertEquals(self.game.input_text(), 'Is it your number 34?')
         self.game.play('=')
         self.assertFalse(self.game.is_playing)
 
