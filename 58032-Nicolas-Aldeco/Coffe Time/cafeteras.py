@@ -11,6 +11,9 @@ class MachineForCoffe():
     def pago(self,coin):
         if coin == True:
             self.coins += 1
+            if self.coffe_level == 0:
+                self.coins -= 1
+                return 'Disculpe no tengo mas cafe. Tome su moneda'
             self.makingCoffe = True
             return '-Haciendo Cafe-'
         else:
@@ -22,13 +25,8 @@ class BasicCoffeMaker(MachineForCoffe):
     
     def coffequantity(self,coffe):
         if self.makingCoffe == True:
-            if self.coffe_level > 0:
-                self.coffe_level -= coffe
-                return 'Cafe con '+str(coffe)+' gramos.'
-            else:
-                self.coins -= 1
-                self.makingCoffe = False
-                return 'No tengo mas cafe,tome su moneda'
+            self.coffe_level -= coffe
+            return 'Cafe con '+str(coffe)+' gramos.'
         else:
             return
 
@@ -62,9 +60,10 @@ class PremiumCoffeMaker(MachineForCoffe):
 
     def __init__(self):
 
-        super().__init__(self)
+        super().__init__()
         self.cup = False
         self.coffetipe = ''
+        self.milklevel = 1000
 
     def cupcheck(self,cup):
         if cup == False:
@@ -72,12 +71,13 @@ class PremiumCoffeMaker(MachineForCoffe):
             return 'Ponga un vaso por favor'
         else:
             self.makingCoffe = True
-            return
+            return 'Vaso en compartimiento'
 
     def withmilk(self,milk):
         if self.makingCoffe == True:
             if milk == True:
                 self.coffetipe = 'Cafe con leche'
+                self.milklevel -= 100
                 return 'Cafe con leche'
             else:
                 self.coffetipe = 'Cafe'
@@ -109,6 +109,7 @@ class PremiumCoffeMaker(MachineForCoffe):
         else:
             return
 
++ Disculpe no tengo mas cafe. Tome su moneda
     def sugarquantity(self,sugar):
         if self.makingCoffe == True:
             self.sugar_level -= sugar
