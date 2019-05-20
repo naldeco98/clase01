@@ -109,7 +109,6 @@ class PremiumCoffeMaker(MachineForCoffe):
         else:
             return
 
-+ Disculpe no tengo mas cafe. Tome su moneda
     def sugarquantity(self,sugar):
         if self.makingCoffe == True:
             self.sugar_level -= sugar
