@@ -16,6 +16,7 @@ class TestBasicCoffeMakerFULL(unittest.TestCase):
         self.assertEqual(self.client.water_level,900)
         self.assertEqual(self.client.sugar_level,100)
         self.assertEqual(self.client.coins,1)
+        self.assertEqual(self.client.dinero,990)
     def test_caffe_simple_con_azucar(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
         self.assertEqual(self.client.coffequantity(10),'Cafe con 10 gramos.')
@@ -26,6 +27,7 @@ class TestBasicCoffeMakerFULL(unittest.TestCase):
         self.assertEqual(self.client.water_level,900)
         self.assertEqual(self.client.sugar_level,95)
         self.assertEqual(self.client.coins,1)
+        self.assertEqual(self.client.dinero,990)
     def test_caffe_simple_con_azucar_y_200ml(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
         self.assertEqual(self.client.coffequantity(10),'Cafe con 10 gramos.')
@@ -36,6 +38,7 @@ class TestBasicCoffeMakerFULL(unittest.TestCase):
         self.assertEqual(self.client.water_level,800)
         self.assertEqual(self.client.sugar_level,95)
         self.assertEqual(self.client.coins,1)
+        self.assertEqual(self.client.dinero,990)
     def test_caffe_simple_con_azucar_y_20gr(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
         self.assertEqual(self.client.coffequantity(20),'Cafe con 20 gramos.')
@@ -46,6 +49,7 @@ class TestBasicCoffeMakerFULL(unittest.TestCase):
         self.assertEqual(self.client.water_level,900)
         self.assertEqual(self.client.sugar_level,95)
         self.assertEqual(self.client.coins,1)
+        self.assertEqual(self.client.dinero,990)
 
 class TestBasicCoffeMakerEMPTY(unittest.TestCase):
 
@@ -63,6 +67,7 @@ class TestBasicCoffeMakerEMPTY(unittest.TestCase):
         self.assertEqual(self.client.water_level,0)
         self.assertEqual(self.client.sugar_level,0)
         self.assertEqual(self.client.coins,0)
+        self.assertEqual(self.client.dinero,1000)
 
     def test_caffe_simple_EMPTY_NoWater(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
@@ -72,6 +77,7 @@ class TestBasicCoffeMakerEMPTY(unittest.TestCase):
         self.assertEqual(self.client.water_level,0)
         self.assertEqual(self.client.sugar_level,0)
         self.assertEqual(self.client.coins,0)
+        self.assertEqual(self.client.dinero,1000)
 
     def test_caffe_simple_EMPTY_NoSugar(self):
         self.assertEqual(self.client.pago(True),'-Haciendo Cafe-')
@@ -81,6 +87,7 @@ class TestBasicCoffeMakerEMPTY(unittest.TestCase):
         self.assertEqual(self.client.water_level,0)
         self.assertEqual(self.client.sugar_level,0)
         self.assertEqual(self.client.coins,0)
+        self.assertEqual(self.client.dinero,1000)
 
 class TestPremiumCoffeMakerFULL(unittest.TestCase):
 

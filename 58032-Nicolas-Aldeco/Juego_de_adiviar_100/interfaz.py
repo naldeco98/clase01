@@ -28,8 +28,22 @@ def humanvspc():
     menu.mainloop()
 
 def pcvshuman():
+    menu_principal.destroy()
+    game = ComputerAgainstHumanGame()
     menu = Tk()
+    menu.geometry('380x150')
     menu.title('PC VS PLAYER')
+    label1 = Label(menu,text = 'Piensa un numero y voy a tratar de adivinarlo!',font=('',10))
+    label1.grid(row=2,column=1)
+    def anser():
+        while True:
+            ans = str(game.guest)
+            texto = StringVar()
+            texto.set(ans)
+            answer = Entry(menu,textvariable=texto,width=4).place(x=120,y=30)
+    anser()
+    label2 = Label(menu,text = 'Tu numero es =').place(x=10,y=30)
+    boton_mas = Button(menu,text = '+',fg = 'green',command = game.play('+')).place(x=10,y=60)
     menu.mainloop()
 
 #Manu principal
